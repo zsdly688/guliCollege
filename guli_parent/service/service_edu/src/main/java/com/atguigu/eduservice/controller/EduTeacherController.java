@@ -28,6 +28,7 @@ import java.util.function.Function;
  * @author testjava
  * @since 2020-08-08
  */
+@CrossOrigin
 @Api(tags = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
@@ -45,8 +46,13 @@ public class EduTeacherController {
     @DeleteMapping("/{id}")
     public R removeTeacher(@ApiParam(name = "id",value = "讲师ID",required = true) @PathVariable String id){
         boolean flag = eduTeacherService.removeById(id);
-        if(flag)return R.ok();
-        else return R.error();
+        if(flag){
+
+            return R.ok();
+        }
+        else {
+            return R.error();
+        }
     }
 
     @ApiOperation("分页讲师列表")
