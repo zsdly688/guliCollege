@@ -86,7 +86,6 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(name)){
             wrapper.like("name",name);
         }
-
         if(!StringUtils.isEmpty(level)){
             wrapper.eq("level",level);
         }

@@ -1,4 +1,4 @@
-package com.atguigu.oss;
+package com.atguigu.msmservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@ComponentScan(basePackages = "com.atguigu")
-public class OssApplication {
+@ComponentScan(basePackages ={ "com.atguigu"})
+public class MsmApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OssApplication.class,args);
+        SpringApplication.run(MsmApplication.class,args);
     }
 }
