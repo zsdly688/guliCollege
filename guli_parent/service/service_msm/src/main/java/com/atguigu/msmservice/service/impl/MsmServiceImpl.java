@@ -19,7 +19,7 @@ public class MsmServiceImpl implements MsmService {
 
     @Override
     public boolean send(Map<String, String> param, String phone) {
-        if(!StringUtils.isEmpty(phone))return false;
+        if(StringUtils.isEmpty(phone))return false;
         DefaultProfile profile=DefaultProfile.getProfile("default","LTAI4GA8CQJsxGDnGPZvQ4bf","2QSGN7kRVt2VHKdCjmgUWRMQyfJjzc");
         IAcsClient client=new DefaultAcsClient(profile);
         //设置相关参数  固定的
