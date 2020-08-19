@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URLEncoder;
 import java.util.HashMap;
 @Api(tags = "微信登录")
-@CrossOrigin
+//@CrossOrigin
 @Controller  //只是请求地址，不需要返回数据
 @RequestMapping("/api/ucenter/wx")
 public class WxApiController {
@@ -84,7 +84,7 @@ public class WxApiController {
             }
 
             //使用jwt根据member对象生成token字符串
-            String jwtToken = JwtUtils.getJwtToken(member.getId(), member.getNickname());
+            String jwtToken = JwtUtils.getJwtToken(member.getId(), member.getNickname(),member.getAvatar());
             //最后：返回首页面，通过路径传递token字符串
             return "redirect:http://localhost:3000?token="+jwtToken;
         }catch(Exception e) {

@@ -28,7 +28,7 @@ import java.util.function.Function;
  * @author testjava
  * @since 2020-08-08
  */
-@CrossOrigin
+//@CrossOrigin
 @Api(tags = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Api(tags = "广告位推荐")
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/educms/bannerfront")
 public class BannerfrontController {

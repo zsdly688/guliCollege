@@ -20,7 +20,7 @@ public class JwtUtils {
     public static final String APP_SECRET = "ukc8BDbRigUDaY6pZFfWus2jZWLPHO";//密钥
 
     //生成Java Web Token字符串，即JWT，
-    public static String getJwtToken(String id, String nickname){
+    public static String getJwtToken(String id, String nickname,String avatar){
 
         String JwtToken = Jwts.builder()
                 .setHeaderParam("typ", "JWT")
@@ -32,7 +32,7 @@ public class JwtUtils {
 
                 .claim("id", id)//设置token主体部分，存储用户信息
                 .claim("nickname", nickname)
-
+                .claim("avatar",avatar)
                 .signWith(SignatureAlgorithm.HS256, APP_SECRET)
                 .compact();
 
@@ -77,11 +77,12 @@ public class JwtUtils {
      * @param request
      * @return
      */
-    public static String getMemberIdByJwtToken(HttpServletRequest request) {
+    public static JwtInfo getMemberIdByJwtToken(HttpServletRequest request) {
         String jwtToken = request.getHeader("token");
-        if(StringUtils.isEmpty(jwtToken)) return "";
+        if(StringUtils.isEmpty(jwtToken)) return null;
         Jws<Claims> claimsJws = Jwts.parser().setSigningKey(APP_SECRET).parseClaimsJws(jwtToken);
         Claims claims = claimsJws.getBody();
-        return (String)claims.get("id");
+        JwtInfo jwtInfo=new JwtInfo((String)claims.get("id"),(String)claims.get("nickname"),(String)claims.get("avatar"));
+        return jwtInfo;
     }
 }

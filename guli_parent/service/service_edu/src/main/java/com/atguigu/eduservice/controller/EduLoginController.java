@@ -4,7 +4,7 @@ import com.atguigu.commonutils.R;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/eduservice/user")
 public class EduLoginController {
 
