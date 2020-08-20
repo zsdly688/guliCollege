@@ -31,7 +31,7 @@ public class SwaggerConfig {
 
         return new ApiInfoBuilder()
                 .title("网站-课程中心API文档")
-                .description("本文档描述了课程中心微服务接口定义")
+                .description("本文档描述了谷粒学院微服务接口定义")
                 .version("1.0")
                 .contact(new Contact("LIYI", "http://baidu.com", "2992786380@qq.com"))
                 .build();

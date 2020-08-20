@@ -133,6 +133,10 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
             selectPermissionList = baseMapper.selectList(null);
         } else {
             selectPermissionList = baseMapper.selectPermissionByUserId(userId);
+            QueryWrapper<Permission> wrapper=new QueryWrapper<>();
+            wrapper.eq("id",1);
+            selectPermissionList.add(baseMapper.selectOne(wrapper));
+
         }
 
         List<Permission> permissionList = PermissionHelper.bulid(selectPermissionList);
