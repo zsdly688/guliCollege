@@ -28,8 +28,8 @@ public class Testvod {
     }
 
     public static void main(String[] argv) throws ClientException {
-        String accessKeyId = "LTAI4GA8CQJsxGDnGPZvQ4bf";
-        String accessKeySecret = "2QSGN7kRVt2VHKdCjmgUWRMQyfJjzc";
+        String accessKeyId = "你的accessKeyId";
+        String accessKeySecret = "你的accessKeySecret";
         String title = "6 - What If I Want to Move Faster - upload by sdk";   //上传之后文件名称
         String fileName = "D:/学习/谷粒学院/项目资料/1-阿里云上传测试视频/6 - What If I Want to Move Faster.mp4";  //本地文件路径和名称
         //上传视频的方法
